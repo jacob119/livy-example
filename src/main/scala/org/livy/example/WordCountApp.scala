@@ -1,11 +1,10 @@
-package org.livy.example
+package org.livy
 
 import java.io.{File, FileNotFoundException}
 import java.net.URI
 
 import org.apache.livy.LivyClientBuilder
-import org.apache.livy.scalaapi.LivyScalaClient
-import org.apache.livy.scalaapi._
+import org.apache.livy.scalaapi.{LivyScalaClient, _}
 import org.apache.spark.storage.StorageLevel
 
 import scala.concurrent.Await
@@ -114,7 +113,7 @@ object WordCountApp {
     url = args(0)
     outputFilePath = args(1)
     args.slice(2, args.length).foreach(parseOptionalArg)
-    
+
     try {
       init(url)
       uploadRelevantJarsForJobExecution()
